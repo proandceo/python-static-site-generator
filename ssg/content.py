@@ -30,14 +30,14 @@ class Content(Mapping):
     def type(self, type):
         self.data["type"] = type
 
-    def __getitem__(self):
+    def __getitem__(self, key):
         return self.data["key"]
 
     def __iteer__(self):
-        self.data
+        self.data.__iter__()
 
     def __len__(self):
-        return self.data
+        return len(self.data)
 
     def __repr__(self):
         data = {}
