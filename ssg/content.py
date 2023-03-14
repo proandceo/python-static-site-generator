@@ -31,9 +31,9 @@ class Content(Mapping):
         self.data["type"] = type
 
     def __getitem__(self, key):
-        return self.data["key"]
+        return self.data[key]
 
-    def __iteer__(self):
+    def __iter__(self):
         self.data.__iter__()
 
     def __len__(self):
@@ -44,4 +44,4 @@ class Content(Mapping):
         for key, value in self.data.items():
             if key != "content":
                 data[key] = value
-        return str(self.data)
+        return str(data)
