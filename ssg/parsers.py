@@ -37,4 +37,4 @@ class ResourceParser(Parser):
         super().copy(path, source, dest)
 
 class MarkdownParser(Parser):
-    extension = [".md", ".markdown"]
+    extensions = [".md", ".markdown"]
