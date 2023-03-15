@@ -1,6 +1,10 @@
 from typing import List
 from pathlib import Path
 import shutil
+import sys
+from docutils.core import publish_parts
+from markdown import markdown
+from ssg.content import Content
 
 
 class Parser:
@@ -10,6 +14,7 @@ class Parser:
         return extension in self.extensions
 
     def parse(self, path: Path, source: Path, dest: Path):
+
         raise NotImplementedError
 
     def read(self, path):
@@ -30,3 +35,6 @@ class ResourceParser(Parser):
 
     def parse(self, path, source, dest):
         super().copy(path, source, dest)
+
+class MarkdownParser(Parser):
+    extension = [".md", ".markdown"]
